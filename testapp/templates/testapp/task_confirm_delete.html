@@ -1,0 +1,18 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="col-lg-5 shadow mx-auto p-0 mt-4">
+    <a href="{% url 'tasks' %}" class="btn btn-link">Go back</a>
+<div class = "p-4">
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete this task?"{{task}}"</p>
+        <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
+</div>
+</div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,28 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<h1>Task: {{task}}</h1>
+<table class="table">
+    <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{% if task.complete == True %}
+                Complete
+                {% else %}
+                In Progress
+                {% endif %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="{% url 'tasks' %}" class="btn btn-link">Go back</a>
+{% endblock content %}
+

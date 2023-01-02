@@ -1,0 +1,18 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<div class="col-lg-5 shadow mx-auto p-0">
+    <h2 class="alert alert-info">Login</h2>
+    <div class="p-4">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class = "btn btn-info" type="submit" value="Login">
+        </form>
+        <br>
+        <p>Don't have an account?<a href="{% url 'register' %}"> Register</a></p>
+    </div>
+</div>
+{% endblock content %}
